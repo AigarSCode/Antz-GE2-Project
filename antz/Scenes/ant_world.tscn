@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbwkeuxxchkau"]
+
+[ext_resource type="PackedScene" uid="uid://g5v8gqwibn0a" path="res://Scenes/ant.tscn" id="1_p0q7g"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ecjvr"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_p0q7g"]
+size = Vector2(20, 20)
+
+[node name="Ant_World" type="Node3D"]
+
+[node name="Ground" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("WorldBoundaryShape3D_ecjvr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("PlaneMesh_p0q7g")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.556165, 0.831072, 0, -0.831072, 0.556165, 0, 9.94275, 8.02965)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.467606, 0.883937, 0, -0.883937, -0.467606, 0, 0, 0)
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.42619, 0, 7.31792)
+
+[node name="Ant" parent="." instance=ExtResource("1_p0q7g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0570907, 0.5, -0.179543)
