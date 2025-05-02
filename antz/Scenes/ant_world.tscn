@@ -1,11 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbwkeuxxchkau"]
+[gd_scene load_steps=7 format=3 uid="uid://cbwkeuxxchkau"]
 
 [ext_resource type="PackedScene" uid="uid://g5v8gqwibn0a" path="res://Scenes/ant.tscn" id="1_p0q7g"]
+[ext_resource type="Script" uid="uid://m8vv1htyahsg" path="res://Scenes/tempMovement.gd" id="2_8c42d"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ecjvr"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_p0q7g"]
 size = Vector2(20, 20)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p0q7g"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_8c42d"]
 
 [node name="Ant_World" type="Node3D"]
 
@@ -26,5 +31,16 @@ transform = Transform3D(1, 0, 0, 0, -0.467606, 0.883937, 0, -0.883937, -0.467606
 [node name="Marker3D" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.42619, 0, 7.31792)
 
-[node name="Ant" parent="." instance=ExtResource("1_p0q7g")]
+[node name="Ant" parent="." node_paths=PackedStringArray("target") instance=ExtResource("1_p0q7g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0570907, 0.5, -0.179543)
+target = NodePath("../CharacterBody3D")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.19227, 1, 4.05241)
+script = ExtResource("2_8c42d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_p0q7g")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+mesh = SubResource("CapsuleMesh_8c42d")
