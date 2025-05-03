@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cbwkeuxxchkau"]
 
 [ext_resource type="PackedScene" uid="uid://g5v8gqwibn0a" path="res://Scenes/ant.tscn" id="1_p0q7g"]
-[ext_resource type="Script" uid="uid://m8vv1htyahsg" path="res://Scenes/tempMovement.gd" id="2_8c42d"]
+[ext_resource type="Script" uid="uid://m8vv1htyahsg" path="res://Scripts/tempMovement.gd" id="2_8c42d"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ecjvr"]
 

@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://g5v8gqwibn0a"]
+[gd_scene load_steps=6 format=3 uid="uid://g5v8gqwibn0a"]
 
-[ext_resource type="Script" uid="uid://c0nnpvaawi6kc" path="res://Scenes/ant_seek.gd" id="1_3vc7g"]
+[ext_resource type="Script" uid="uid://c0nnpvaawi6kc" path="res://Scripts/ant_seek.gd" id="1_3vc7g"]
+[ext_resource type="Script" uid="uid://71kc7ncoxqqk" path="res://Scripts/wander.gd" id="2_4ydk5"]
+[ext_resource type="Script" uid="uid://yx62g58uc8q1" path="res://Scripts/return_to_hill.gd" id="3_fd48h"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yhm7m"]
 
@@ -16,3 +18,11 @@ shape = SubResource("CapsuleShape3D_yhm7m")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 mesh = SubResource("CapsuleMesh_3vc7g")
+
+[node name="States" type="Node3D" parent="."]
+
+[node name="Wander" type="Node3D" parent="States"]
+script = ExtResource("2_4ydk5")
+
+[node name="ReturnToHill" type="Node3D" parent="States"]
+script = ExtResource("3_fd48h")

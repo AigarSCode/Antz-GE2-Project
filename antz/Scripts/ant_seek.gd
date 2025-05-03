@@ -20,6 +20,7 @@ func _physics_process(delta: float) -> void:
 		velocity = velocity.limit_length(max_speed)
 		
 		move_and_slide()
+		look_at(global_transform.origin + velocity.normalized() * 2)
 		
 		# Draw gizmos for debugging
 		draw_gizmos(steering_force, acceleration)
