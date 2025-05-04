@@ -1,4 +1,4 @@
-extends state
+extends State
 
 
 func enter(ant: CharacterBody3D) -> void:

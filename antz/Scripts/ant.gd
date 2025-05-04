@@ -1,0 +1,27 @@
+extends CharacterBody3D
+
+@export var target:CharacterBody3D
+
+@export var max_speed: float = 5.0  # Maximum speed (units per second)
+@export var max_force: float = 10.0  # Maximum steering force (controls turning speed)
+@export var max_acceleration: float = 20.0
+@export var arrival_distance: float = 10.0  # Distance at which to slow down
+
+var current_state: State
+
+func _ready() -> void:
+	change_state($States/Wander)
+
+
+func _physics_process(delta: float) -> void:
+	if current_state:
+		current_state.process(delta)
+
+
+func change_state(new_state) -> void:
+	if current_state == new_state:
+		return
+	if current_state:
+		current_state.exit()
+	current_state = new_state
+	current_state.enter(self)
