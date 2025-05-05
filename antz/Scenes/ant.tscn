@@ -144,3 +144,6 @@ script = ExtResource("2_4ydk5")
 
 [node name="ReturnToHill" type="Node3D" parent="States"]
 script = ExtResource("3_fd48h")
+
+[node name="CameraTarget" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3582, -3.89893)

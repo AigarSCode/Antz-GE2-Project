@@ -60,7 +60,7 @@ func apply_movement(steering_force: Vector3, delta: float) -> void:
 
 func get_avoidance_steering() -> Vector3:
 	var avoidance_force = Vector3.ZERO
-	var base_feeler_length = 10.00
+	var base_feeler_length = 5.0
 	var feeler_length = base_feeler_length + ant.velocity.length()
 	var feeler_angle = deg_to_rad(30) # Angle for side feelers
 	
@@ -83,7 +83,7 @@ func get_avoidance_steering() -> Vector3:
 	
 	# Cast rays for each feeler
 	for i in range(3):
-		var from = ant.global_transform.origin + Vector3(0, 0.2, 0)
+		var from = ant.global_transform.origin
 		var to = from + feeler_dirs[i] * feeler_length
 		var query = PhysicsRayQueryParameters3D.create(from, to)
 		query.exclude = [ant] # Don’t collide with the ant itself
@@ -110,7 +110,7 @@ func get_avoidance_steering() -> Vector3:
 		# Scale strength by proximity (closer = stronger)
 		var strength = (feeler_length - closest_hit_distance) / feeler_length
 		# Stronger avoidance force, especially when close
-		avoidance_force = avoidance_dir * strength * 15.0
+		avoidance_force = avoidance_dir * strength * 50
 		
 		# Draw avoidance force for debugging
 		if avoidance_force.length() > 0.01:

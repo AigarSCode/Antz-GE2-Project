@@ -1,8 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://cbwkeuxxchkau"]
+[gd_scene load_steps=23 format=3 uid="uid://cbwkeuxxchkau"]
 
 [ext_resource type="PackedScene" uid="uid://g5v8gqwibn0a" path="res://Scenes/ant.tscn" id="1_p0q7g"]
 [ext_resource type="Texture2D" uid="uid://ds4rfgiqq5db5" path="res://assets/Grass_15.png" id="1_t3av6"]
 [ext_resource type="Script" uid="uid://m8vv1htyahsg" path="res://Scripts/tempMovement.gd" id="2_8c42d"]
+[ext_resource type="Script" uid="uid://boet2h0nl7mda" path="res://Scenes/camera_3d.gd" id="2_yoqqe"]
 [ext_resource type="PackedScene" uid="uid://7wwahdkti0sm" path="res://assets/World Models/GLB format/rock-a.glb" id="4_qfal7"]
 [ext_resource type="PackedScene" uid="uid://gokplam0ofas" path="res://assets/World Models/GLB format/resource-stone-large.glb" id="4_rn04o"]
 [ext_resource type="PackedScene" uid="uid://cl1sh2ku1pvnv" path="res://assets/World Models/GLB format/resource-stone.glb" id="5_fgshy"]
@@ -44,6 +45,7 @@ mesh = SubResource("PlaneMesh_p0q7g")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.556165, 0.831072, 0, -0.831072, 0.556165, 0, 21.1721, 28.5837)
+script = ExtResource("2_yoqqe")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.467606, 0.883937, 0, -0.883937, -0.467606, 0, 0, 0)
