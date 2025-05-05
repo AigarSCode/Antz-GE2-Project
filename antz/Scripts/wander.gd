@@ -2,9 +2,9 @@ extends State
 
 var noise:FastNoiseLite = FastNoiseLite.new()
 @export var theta = 0
-@export var amplitude = 15.0
-@export var distance = 10
-@export var frequency = 0.1
+@export var amplitude = 25.0
+@export var distance = 12
+@export var frequency = 0.075
 @export var radius = 5
 
 var wander_target: Vector3
