@@ -1,4 +1,4 @@
-extends State
+class_name Wander extends State
 
 var noise:FastNoiseLite = FastNoiseLite.new()
 @export var theta = 0
