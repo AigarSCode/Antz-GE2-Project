@@ -39,6 +39,14 @@ func apply_movement(steering_force: Vector3, delta: float) -> void:
 	#ant.velocity += -ant.velocity * ant.drag_coefficient * delta
 	ant.velocity = ant.velocity.limit_length(ant.max_speed)
 	ant.velocity.y = 0
+	
+	if ant.velocity.length_squared() > 0.01:
+		var direction = ant.velocity.normalized()
+		var target_rotation = atan2(direction.x, direction.z)
+		var current_rotation = ant.rotation.y
+		var rotation_speed = 7.5
+		ant.rotation.y = lerp_angle(current_rotation, target_rotation, rotation_speed * delta)
+	
 	ant.set_velocity(ant.velocity)
 	ant.move_and_slide()
 	draw_gizmos(steering_force, acceleration)
