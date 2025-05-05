@@ -52,7 +52,7 @@ transform = Transform3D(1, 0, 0, 0, -0.467606, 0.883937, 0, -0.883937, -0.467606
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.42619, 0, 7.31792)
 
 [node name="Ant" parent="." node_paths=PackedStringArray("target") instance=ExtResource("1_p0q7g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.057, 0.25, -0.18)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 target = NodePath("../CharacterBody3D")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://g5v8gqwibn0a"]
+[gd_scene load_steps=13 format=3 uid="uid://g5v8gqwibn0a"]
 
 [ext_resource type="Script" uid="uid://c0nnpvaawi6kc" path="res://Scripts/ant.gd" id="1_3vc7g"]
 [ext_resource type="Script" uid="uid://71kc7ncoxqqk" path="res://Scripts/wander.gd" id="2_4ydk5"]
+[ext_resource type="Material" uid="uid://e4huwp7nrfx" path="res://assets/ant_material.tres" id="2_wtaqj"]
 [ext_resource type="Script" uid="uid://yx62g58uc8q1" path="res://Scripts/return_to_hill.gd" id="3_fd48h"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yhm7m"]
@@ -12,6 +13,28 @@ height = 1.0
 radius = 0.25
 height = 1.0
 
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_wtaqj"]
+radius = 0.02
+height = 0.4
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_yntpf"]
+radius = 0.02
+height = 0.55
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ae3vd"]
+radius = 0.3
+height = 0.8
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_fd48h"]
+radius = 0.25
+height = 0.75
+
+[sub_resource type="BoxMesh" id="BoxMesh_fd48h"]
+size = Vector3(0.015, 0.33, 0.015)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wtaqj"]
+size = Vector3(0.015, 0.2, 0.015)
+
 [node name="Ant" type="CharacterBody3D"]
 script = ExtResource("1_3vc7g")
 
@@ -19,9 +42,100 @@ script = ExtResource("1_3vc7g")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_yhm7m")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="Body" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+material_override = ExtResource("2_wtaqj")
 mesh = SubResource("CapsuleMesh_3vc7g")
+
+[node name="Leg1" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(0.152705, 0.866031, 0.4761, -0.984808, 0.173648, 5.28371e-09, -0.0826739, -0.468867, 0.879391, -0.389541, -0.287405, 0.116574)
+material_override = ExtResource("2_wtaqj")
+mesh = SubResource("CapsuleMesh_wtaqj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Body/Leg1"]
+transform = Transform3D(0.973052, -0.152832, -0.172664, -0.152832, 0.133247, -0.979228, 0.172664, 0.979228, 0.106298, 0.0402792, -0.217917, -0.257779)
+material_override = ExtResource("2_wtaqj")
+mesh = SubResource("CapsuleMesh_yntpf")
+
+[node name="Leg3" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(-0.117962, 0.880813, 0.458535, -0.98957, -0.065826, -0.128129, -0.0826739, -0.468867, 0.879391, -0.358598, 0.0180754, 0.0972997)
+material_override = ExtResource("2_wtaqj")
+mesh = SubResource("CapsuleMesh_wtaqj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Body/Leg3"]
+transform = Transform3D(0.973052, -0.152832, -0.172664, -0.152832, 0.133247, -0.979228, 0.172664, 0.979228, 0.106298, 0.0402792, -0.217917, -0.257779)
+material_override = ExtResource("2_wtaqj")
+mesh = SubResource("CapsuleMesh_yntpf")
+
+[node name="Leg2" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(-0.397063, 0.824846, 0.402456, -0.91406, -0.315901, -0.254363, -0.0826739, -0.468867, 0.879391, -0.383647, 0.335741, 0.103373)
+material_override = ExtResource("2_wtaqj")
+mesh = SubResource("CapsuleMesh_wtaqj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Body/Leg2"]
+transform = Transform3D(0.973052, -0.152832, -0.172664, -0.152832, 0.133247, -0.979228, 0.172664, 0.979228, 0.106298, 0.0402792, -0.217917, -0.257779)
+material_override = ExtResource("2_wtaqj")
+mesh = SubResource("CapsuleMesh_yntpf")
+
+[node name="Leg4" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(-0.217517, -0.852647, -0.475057, 0.972549, -0.230558, -0.0314951, -0.0826738, -0.468867, 0.879391, 0.380318, 0.296036, 0.116574)
+material_override = ExtResource("2_wtaqj")
+mesh = SubResource("CapsuleMesh_wtaqj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Body/Leg4"]
+transform = Transform3D(0.973052, -0.152832, -0.172664, -0.152832, 0.133247, -0.979228, 0.172664, 0.979228, 0.106298, 0.0402792, -0.217917, -0.257779)
+material_override = ExtResource("2_wtaqj")
+mesh = SubResource("CapsuleMesh_yntpf")
+
+[node name="Leg5" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(0.0522415, -0.883238, -0.466007, 0.995206, 0.00741426, 0.097515, -0.0826738, -0.468867, 0.879391, 0.36965, -0.0108222, 0.0972997)
+material_override = ExtResource("2_wtaqj")
+mesh = SubResource("CapsuleMesh_wtaqj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Body/Leg5"]
+transform = Transform3D(0.973052, -0.152832, -0.172664, -0.152832, 0.133247, -0.979228, 0.172664, 0.979228, 0.106298, 0.0402792, -0.217917, -0.257779)
+material_override = ExtResource("2_wtaqj")
+mesh = SubResource("CapsuleMesh_yntpf")
+
+[node name="Leg6" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(0.335726, -0.843936, -0.418401, 0.938324, 0.260644, 0.227182, -0.0826739, -0.468867, 0.879391, 0.415659, -0.326135, 0.103373)
+material_override = ExtResource("2_wtaqj")
+mesh = SubResource("CapsuleMesh_wtaqj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Body/Leg6"]
+transform = Transform3D(0.973052, -0.152832, -0.172664, -0.152832, 0.133247, -0.979228, 0.172664, 0.979228, 0.106298, 0.0402792, -0.217917, -0.257779)
+material_override = ExtResource("2_wtaqj")
+mesh = SubResource("CapsuleMesh_yntpf")
+
+[node name="BodyEnd" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.0346607, -0.654509)
+material_override = ExtResource("2_wtaqj")
+mesh = SubResource("CapsuleMesh_ae3vd")
+
+[node name="Head" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3.35002e-08, 0.766394, 0, -0.766394, -3.35002e-08, 0, 0, 0, 0.766394, 0, 0.0884065, 0.52959)
+material_override = ExtResource("2_wtaqj")
+mesh = SubResource("CapsuleMesh_fd48h")
+
+[node name="Antennae" type="MeshInstance3D" parent="Head"]
+transform = Transform3D(0.622284, 0.782718, -0.0106957, -0.595328, 0.482087, 0.642788, 0.508278, -0.393629, 0.76597, -0.247582, -0.227753, 0.0999832)
+material_override = ExtResource("2_wtaqj")
+mesh = SubResource("BoxMesh_fd48h")
+
+[node name="Antennae3" type="MeshInstance3D" parent="Head"]
+transform = Transform3D(1, -2.71584e-08, 9.76507e-09, 9.52764e-09, 0.630039, 0.776564, -2.72426e-08, -0.776564, 0.630039, -0.373615, -0.366758, 0.239011)
+material_override = ExtResource("2_wtaqj")
+mesh = SubResource("BoxMesh_wtaqj")
+
+[node name="Antennae4" type="MeshInstance3D" parent="Head"]
+transform = Transform3D(0.622284, 0.782718, -0.0106957, 0.374883, -0.285993, 0.881857, 0.687186, -0.552775, -0.471397, -0.247582, 0.202583, 0.087177)
+material_override = ExtResource("2_wtaqj")
+mesh = SubResource("BoxMesh_fd48h")
+
+[node name="Antennae5" type="MeshInstance3D" parent="Head"]
+transform = Transform3D(1, 2.7932e-08, 9.77373e-09, 1.0017e-08, -0.630283, 0.776366, 2.78457e-08, -0.776366, -0.630283, -0.373615, 0.310029, 0.251818)
+material_override = ExtResource("2_wtaqj")
+mesh = SubResource("BoxMesh_wtaqj")
 
 [node name="States" type="Node3D" parent="."]
 
