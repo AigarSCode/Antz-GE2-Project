@@ -2,14 +2,14 @@ class_name Wander extends State
 
 var noise:FastNoiseLite = FastNoiseLite.new()
 @export var theta = 0
-@export var amplitude = 20.0
+@export var amplitude = 15.0
 @export var distance = 8
 @export var frequency = 0.075
 @export var radius = 5
 
 var wander_target: Vector3
 var wander_update_timer: float = 0.0
-var wander_update_interval: float = 3.0
+var wander_update_interval: float = 2.0
 
 func enter(ant: CharacterBody3D) -> void:
 	super.enter(ant)
@@ -55,16 +55,17 @@ func wander(delta) -> Vector3:
 	
 	# Get Perlin noise offsets
 	var noise_x = noise.get_noise_1d(theta) * amplitude  # Left/right sway
-	var noise_z = noise.get_noise_1d(theta + 1000.0) * amplitude * 0.5  # Forward/back sway (less pronounced)
+	var noise_z = max(0.0, noise.get_noise_1d(theta + 1000.0) * amplitude * 0.5)  # Forward/back sway (less pronounced)
 	
 	# Calculate target on wander circle with noise
-	var angle = noise_x * PI * 0.5  # Map noise [-1, 1] to [-90°, 90°] for wider arcs
+	var angle = noise_x * PI * 0.25
 	var target_offset = Vector3(sin(angle), 0, cos(angle)) * radius
 	target_offset += Vector3(noise_x, 0, noise_z)  # Add noise for extra sway
 	
 	# Rotate offset to align with ant's forward direction
 	var projected = ant.global_transform.basis
 	wander_target = circle_center + (projected * target_offset)
+	
 	on_draw_gizmos()
 	return wander_target
 
