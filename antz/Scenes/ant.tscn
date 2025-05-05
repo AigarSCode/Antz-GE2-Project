@@ -5,8 +5,12 @@
 [ext_resource type="Script" uid="uid://yx62g58uc8q1" path="res://Scripts/return_to_hill.gd" id="3_fd48h"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yhm7m"]
+radius = 0.25
+height = 1.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_3vc7g"]
+radius = 0.25
+height = 1.0
 
 [node name="Ant" type="CharacterBody3D"]
 script = ExtResource("1_3vc7g")
