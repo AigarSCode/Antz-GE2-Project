@@ -2,14 +2,13 @@ class_name State extends Node
 
 var ant:CharacterBody3D
 
-
 func enter(ant: CharacterBody3D) -> void:
 	self.ant = ant
 
 func exit() -> void:
 	pass
 
-func process(delta: float) -> void:
+func _process(delta: float) -> void:
 	pass
 
 func seek(target_pos: Vector3) -> Vector3:
@@ -36,7 +35,7 @@ func apply_movement(steering_force: Vector3, delta: float) -> void:
 	# Add avoidance steering to the state's steering force
 	var avoidance_steering = get_avoidance_steering()
 	# Prioritize avoidance when close to obstacle
-	var avoidance_weight = 1.0 if avoidance_steering.length() > 0.01 else 0.0
+	var avoidance_weight = 5.0 if avoidance_steering.length() > 0.01 else 0.0
 	var total_steering = steering_force * (1.0 - avoidance_weight * 0.7) + avoidance_steering
 	
 	var acceleration = steering_force.clamp(Vector3(-ant.max_acceleration, -ant.max_acceleration, -ant.max_acceleration), 
@@ -121,12 +120,6 @@ func get_avoidance_steering() -> Vector3:
 
 func draw_gizmos(steering_force: Vector3, acceleration: Vector3) -> void:
 	var arrow_length = 2.0
-	
-	# Draw desired direction (blue)
-	if ant.target:
-		var direction = (ant.target.global_transform.origin - ant.global_transform.origin).normalized()
-		var direction_end = ant.global_transform.origin + direction * arrow_length
-		DebugDraw3D.draw_arrow(ant.global_transform.origin, direction_end, Color.BLUE, 0.1)
 	
 	# Draw velocity (red)
 	var velocity_end = ant.global_transform.origin + ant.velocity.normalized() * arrow_length
