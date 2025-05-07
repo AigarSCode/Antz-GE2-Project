@@ -1,9 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://g5v8gqwibn0a"]
+[gd_scene load_steps=15 format=3 uid="uid://g5v8gqwibn0a"]
 
 [ext_resource type="Script" uid="uid://c0nnpvaawi6kc" path="res://Scripts/ant.gd" id="1_3vc7g"]
 [ext_resource type="Script" uid="uid://71kc7ncoxqqk" path="res://Scripts/wander.gd" id="2_4ydk5"]
 [ext_resource type="Material" uid="uid://e4huwp7nrfx" path="res://assets/ant_material.tres" id="2_wtaqj"]
+[ext_resource type="Script" uid="uid://tsd40qpu5ko6" path="res://Scenes/foodFeelers.gd" id="3_ae3vd"]
 [ext_resource type="Script" uid="uid://yx62g58uc8q1" path="res://Scripts/return_to_hill.gd" id="3_fd48h"]
+[ext_resource type="Script" uid="uid://bvswb4x2g4rgg" path="res://Scenes/get_food.gd" id="5_yntpf"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yhm7m"]
 radius = 0.25
@@ -116,6 +118,7 @@ mesh = SubResource("CapsuleMesh_ae3vd")
 transform = Transform3D(-3.35002e-08, 0.766394, 0, -0.766394, -3.35002e-08, 0, 0, 0, 0.766394, 0, 0.0884065, 0.52959)
 material_override = ExtResource("2_wtaqj")
 mesh = SubResource("CapsuleMesh_fd48h")
+script = ExtResource("3_ae3vd")
 
 [node name="Antennae" type="MeshInstance3D" parent="Head"]
 transform = Transform3D(0.622284, 0.782718, -0.0106957, -0.595328, 0.482087, 0.642788, 0.508278, -0.393629, 0.76597, -0.247582, -0.227753, 0.0999832)
@@ -137,6 +140,34 @@ transform = Transform3D(1, 2.7932e-08, 9.77373e-09, 1.0017e-08, -0.630283, 0.776
 material_override = ExtResource("2_wtaqj")
 mesh = SubResource("BoxMesh_wtaqj")
 
+[node name="RayCast3D" type="RayCast3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.00752e-08, 0.230494)
+target_position = Vector3(0, -5, 0)
+
+[node name="RayCast3D2" type="RayCast3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 0.34202, 0.939693, 0, -0.939693, 0.34202, 0, -0.0788335, 0.216593)
+target_position = Vector3(0, -5, 0)
+
+[node name="RayCast3D3" type="RayCast3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, -0.34202, 0.939693, 0, -0.939693, -0.34202, 0, 0.0788335, 0.216593)
+target_position = Vector3(0, -5, 0)
+
+[node name="RayCast3D4" type="RayCast3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, -0.642788, 0.766044, 0, -0.766044, -0.642788, 0, 0.148158, 0.176568)
+target_position = Vector3(0, -5, 0)
+
+[node name="RayCast3D5" type="RayCast3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 0.642788, 0.766044, 0, -0.766044, 0.642788, 0, -0.148158, 0.176568)
+target_position = Vector3(0, -5, 0)
+
+[node name="RayCast3D6" type="RayCast3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, -0.199613, 0.115247)
+target_position = Vector3(0, -5, 0)
+
+[node name="RayCast3D7" type="RayCast3D" parent="Head"]
+transform = Transform3D(1, -4.37114e-08, 7.57103e-08, -7.57103e-08, -0.866025, 0.5, 4.37114e-08, -0.5, -0.866025, 1.00752e-08, 0.199613, 0.115247)
+target_position = Vector3(0, -5, 0)
+
 [node name="States" type="Node3D" parent="."]
 
 [node name="Wander" type="Node3D" parent="States"]
@@ -144,6 +175,9 @@ script = ExtResource("2_4ydk5")
 
 [node name="ReturnToHill" type="Node3D" parent="States"]
 script = ExtResource("3_fd48h")
+
+[node name="GetFood" type="Node3D" parent="States"]
+script = ExtResource("5_yntpf")
 
 [node name="CameraTarget" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3582, -3.89893)

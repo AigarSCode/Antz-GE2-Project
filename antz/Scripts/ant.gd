@@ -25,3 +25,8 @@ func change_state(new_state) -> void:
 		current_state.exit()
 	current_state = new_state
 	current_state.enter(self)
+
+
+# Food Detected code, seek to it
+func seek_food() -> void:
+	pass
