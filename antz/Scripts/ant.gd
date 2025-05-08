@@ -4,7 +4,7 @@ extends CharacterBody3D
 
 @export var max_speed: float = 3.0  # Maximum speed (units per second)
 @export var max_force: float = 10.0  # Maximum steering force (controls turning speed)
-@export var max_acceleration: float = 15.0
+@export var max_acceleration: float = 12.5
 @export var arrival_distance: float = 10.0  # Distance at which to slow down
 
 var current_state: State

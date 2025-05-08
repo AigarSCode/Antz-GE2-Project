@@ -10,7 +10,6 @@ func _ready() -> void:
 	ant = $"../Ant"
 
 func _process(delta: float) -> void:
-	if ant.current_state is Wander:
-		label_state.set_text("Current State: Wander")
+	label_state.set_text("Current State: " + ant.current_state.name)
 	
 	label_speed.set_text("Current Speed: " + str(ant.velocity.length()))
