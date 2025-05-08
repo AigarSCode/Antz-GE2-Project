@@ -6,11 +6,12 @@ var label_target
 var ant
 
 func _ready() -> void:
-	label_state = $Control/MarginContainer/VBoxContainer/Label_state
-	label_target= $Control/MarginContainer/VBoxContainer/Label_target
-	label_speed = $Control/MarginContainer/VBoxContainer/Label_speed
+	label_state = $Control/InfoBox/VBoxContainer/Label_state
+	label_target= $Control/InfoBox/VBoxContainer/Label_target
+	label_speed = $Control/InfoBox/VBoxContainer/Label_speed
 	ant = $"../Ant"
 
+# Update all UI elements
 func _process(delta: float) -> void:
 	label_state.set_text("Current State: " + ant.current_state.name)
 	if ant.target:

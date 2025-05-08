@@ -8,23 +8,135 @@ script = ExtResource("1_mkghg")
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 1024.0
-offset_bottom = 768.0
+offset_right = 1152.0
+offset_bottom = 648.0
 
-[node name="MarginContainer" type="MarginContainer" parent="Control"]
+[node name="InfoBox" type="MarginContainer" parent="Control"]
 layout_mode = 1
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/InfoBox"]
 layout_mode = 2
 
-[node name="Label_state" type="Label" parent="Control/MarginContainer/VBoxContainer"]
+[node name="Label_state" type="Label" parent="Control/InfoBox/VBoxContainer"]
 layout_mode = 2
 text = "Current State: "
 
-[node name="Label_target" type="Label" parent="Control/MarginContainer/VBoxContainer"]
+[node name="Label_target" type="Label" parent="Control/InfoBox/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label_speed" type="Label" parent="Control/MarginContainer/VBoxContainer"]
+[node name="Label_speed" type="Label" parent="Control/InfoBox/VBoxContainer"]
 layout_mode = 2
+
+[node name="ConfigBox" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -210.0
+offset_top = -98.0
+offset_right = 213.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ConfigBox"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/ConfigBox/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label_max_speed" type="Label" parent="Control/ConfigBox/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Max Speed"
+
+[node name="HSlider" type="HSlider" parent="Control/ConfigBox/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = 0.5
+max_value = 10.0
+step = 0.1
+value = 3.0
+
+[node name="Label_max_speed_val" type="Label" parent="Control/ConfigBox/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "3.0"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/ConfigBox/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label_max_force" type="Label" parent="Control/ConfigBox/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Max Steering Force"
+
+[node name="HSlider" type="HSlider" parent="Control/ConfigBox/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = 1.0
+max_value = 20.0
+step = 0.2
+value = 10.0
+
+[node name="Label_max_force_val" type="Label" parent="Control/ConfigBox/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "10.0"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Control/ConfigBox/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label_max_acceleration" type="Label" parent="Control/ConfigBox/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Max Acceleration"
+
+[node name="HSlider" type="HSlider" parent="Control/ConfigBox/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = 1.0
+max_value = 20.0
+step = 0.1
+value = 12.5
+
+[node name="Label_max_acceleration_val" type="Label" parent="Control/ConfigBox/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "12.5"
+
+[node name="Keybinds" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+offset_right = 203.0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="Control/Keybinds"]
+layout_mode = 2
+text = " Esc to open/close settings"
+
+[node name="FoodFound" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 50.0
+grow_horizontal = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/FoodFound"]
+layout_mode = 2
+
+[node name="Label_FoodFound" type="Label" parent="Control/FoodFound/VBoxContainer"]
+layout_mode = 2
+text = "Food Found"
+
+[node name="Label_FoodFound_Val" type="Label" parent="Control/FoodFound/VBoxContainer"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1

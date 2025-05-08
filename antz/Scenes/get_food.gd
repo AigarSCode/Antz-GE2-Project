@@ -22,5 +22,7 @@ func pickup_food() -> void:
 	# Remove the food from the world
 	ant.target.get_parent().get_parent().queue_free()
 	
+	ant.food_pickedup += 1
+	
 	# Set state back to wander
 	ant.change_state(ant.get_node("States/Wander"))

@@ -8,6 +8,7 @@ var target
 @export var arrival_distance: float = 3.0  # Distance at which to slow down
 
 var current_state: State
+var food_pickedup:int = 0
 
 func _ready() -> void:
 	# Wander State by Default

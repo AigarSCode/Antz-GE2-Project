@@ -42,7 +42,7 @@ size = Vector2(100, 100)
 
 [node name="Ant_World" type="Node3D"]
 
-[node name="UiElements" parent="." instance=ExtResource("1_bjgkp")]
+[node name="UIElements" parent="." instance=ExtResource("1_bjgkp")]
 
 [node name="Ground" type="StaticBody3D" parent="."]
 
