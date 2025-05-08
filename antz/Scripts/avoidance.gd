@@ -44,6 +44,7 @@ func get_avoidance_force() -> Array:
 		var to = from + feeler_dirs[i] * feeler_length
 		var query = PhysicsRayQueryParameters3D.create(from, to)
 		query.exclude = [ant]
+		query.collision_mask = 1
 		var result = space_state.intersect_ray(query)
 		
 		var line_color = Color.RED if result else Color.GREEN

@@ -144,30 +144,37 @@ mesh = SubResource("BoxMesh_wtaqj")
 [node name="RayCast3D" type="RayCast3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.00752e-08, 0.230494)
 target_position = Vector3(0, -5, 0)
+collision_mask = 2
 
 [node name="RayCast3D2" type="RayCast3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 0.34202, 0.939693, 0, -0.939693, 0.34202, 0, -0.0788335, 0.216593)
 target_position = Vector3(0, -5, 0)
+collision_mask = 2
 
 [node name="RayCast3D3" type="RayCast3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, -0.34202, 0.939693, 0, -0.939693, -0.34202, 0, 0.0788335, 0.216593)
 target_position = Vector3(0, -5, 0)
+collision_mask = 2
 
 [node name="RayCast3D4" type="RayCast3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, -0.642788, 0.766044, 0, -0.766044, -0.642788, 0, 0.148158, 0.176568)
 target_position = Vector3(0, -5, 0)
+collision_mask = 2
 
 [node name="RayCast3D5" type="RayCast3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 0.642788, 0.766044, 0, -0.766044, 0.642788, 0, -0.148158, 0.176568)
 target_position = Vector3(0, -5, 0)
+collision_mask = 2
 
 [node name="RayCast3D6" type="RayCast3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, -0.199613, 0.115247)
 target_position = Vector3(0, -5, 0)
+collision_mask = 2
 
 [node name="RayCast3D7" type="RayCast3D" parent="Head"]
 transform = Transform3D(1, -4.37114e-08, 7.57103e-08, -7.57103e-08, -0.866025, 0.5, 4.37114e-08, -0.5, -0.866025, 1.00752e-08, 0.199613, 0.115247)
 target_position = Vector3(0, -5, 0)
+collision_mask = 2
 
 [node name="States" type="Node3D" parent="."]
 

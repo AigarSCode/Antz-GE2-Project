@@ -10,6 +10,7 @@ extends CharacterBody3D
 var current_state: State
 
 func _ready() -> void:
+	# Wander State by Default
 	change_state($States/Wander)
 
 
