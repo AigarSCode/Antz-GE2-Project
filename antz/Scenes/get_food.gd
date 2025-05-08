@@ -10,10 +10,17 @@ func exit() -> void:
 
 
 func process(delta: float) -> void:
-	# Food Targeting logic here
-	pass
+	var dist = (ant.global_position - ant.target.global_position).length()
+	if dist < 1:
+		pickup_food()
+	else:
+		var steering_force = seek(ant.target.global_position)
+		apply_movement(steering_force, delta)
 
 
-# Food Pickup logic here
 func pickup_food() -> void:
-	pass
+	# Remove the food from the world
+	ant.target.get_parent().get_parent().queue_free()
+	
+	# Set state back to wander
+	ant.change_state(ant.get_node("States/Wander"))

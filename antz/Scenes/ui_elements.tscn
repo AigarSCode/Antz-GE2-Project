@@ -23,5 +23,8 @@ layout_mode = 2
 layout_mode = 2
 text = "Current State: "
 
+[node name="Label_target" type="Label" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
 [node name="Label_speed" type="Label" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2

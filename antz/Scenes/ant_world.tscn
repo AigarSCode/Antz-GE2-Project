@@ -65,9 +65,8 @@ transform = Transform3D(1, 0, 0, 0, -0.467606, 0.883937, 0, -0.883937, -0.467606
 [node name="Marker3D" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.42619, 0, 7.31792)
 
-[node name="Ant" parent="." node_paths=PackedStringArray("target") instance=ExtResource("1_p0q7g")]
+[node name="Ant" parent="." instance=ExtResource("1_p0q7g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
-target = NodePath("../CharacterBody3D")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.19227, 1, 4.05241)
@@ -681,11 +680,17 @@ transform = Transform3D(3.00499, 0, 0, 0, 3.00499, 0, 0, 0, 3.00499, 20.4933, 0.
 [node name="radish2" parent="Food" instance=ExtResource("22_oxv31")]
 transform = Transform3D(1.87054, 0, 0, 0, 1.87054, 0, 0, 0, 1.87054, 27.2542, 0.125, -6.22173)
 
+[node name="radish4" parent="Food" instance=ExtResource("22_oxv31")]
+transform = Transform3D(1.87054, 0, 0, 0, 1.87054, 0, 0, 0, 1.87054, 0.0769157, 0.125, -8.89332)
+
 [node name="radish3" parent="Food" instance=ExtResource("22_oxv31")]
 transform = Transform3D(1.87054, 0, 0, 0, 1.87054, 0, 0, 0, 1.87054, 19.8504, 0.125, 34.1172)
 
 [node name="pumpkin2" parent="Food" instance=ExtResource("23_1umm3")]
 transform = Transform3D(1.90723, 0, 0, 0, 1.90723, 0, 0, 0, 1.90723, 30.4664, 0.125, 12.4087)
+
+[node name="pumpkin4" parent="Food" instance=ExtResource("23_1umm3")]
+transform = Transform3D(1.90723, 0, 0, 0, 1.90723, 0, 0, 0, 1.90723, -2.27052, 0.125, 10.8335)
 
 [node name="pumpkin3" parent="Food" instance=ExtResource("23_1umm3")]
 transform = Transform3D(1.90723, 0, 0, 0, 1.90723, 0, 0, 0, 1.90723, 35.1021, 0.125, 34.4824)
