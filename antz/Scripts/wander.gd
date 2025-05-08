@@ -72,7 +72,8 @@ func wander(delta) -> Vector3:
 	var projected = ant.global_transform.basis
 	wander_target = circle_center + (projected * target_offset)
 	
-	on_draw_gizmos()
+	if ant.gizmos_enabled:
+		on_draw_gizmos()
 	return wander_target
 
 # Update the persistent wander target
@@ -112,7 +113,8 @@ func get_avoidance_force() -> Array:
 		var result = space_state.intersect_ray(query)
 		
 		var line_color = Color.RED if result else Color.GREEN
-		DebugDraw3D.draw_line(from, result.position if result else to, line_color)
+		if ant.gizmos_enabled:
+			DebugDraw3D.draw_line(from, result.position if result else to, line_color)
 		
 		if result:
 			var distance = (result.position - from).length()
@@ -128,7 +130,7 @@ func get_avoidance_force() -> Array:
 		strength = clamp((feeler_length - closest_hit_distance) / feeler_length, 0.0, 1.0)
 		avoidance_force = avoidance_dir * strength * 100.0
 		
-		if avoidance_force.length() > 0.01:
+		if avoidance_force.length() > 0.01 and ant.gizmos_enabled:
 			DebugDraw3D.draw_arrow(ant.global_transform.origin, ant.global_transform.origin + avoidance_force.normalized() * 2.0, Color.PURPLE, 0.1)
 	
 	return [avoidance_force, strength]

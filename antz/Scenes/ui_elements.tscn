@@ -57,8 +57,8 @@ text = "Max Speed"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-min_value = 0.5
-max_value = 10.0
+min_value = 0.1
+max_value = 20.0
 step = 0.1
 value = 3.0
 
@@ -78,7 +78,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 min_value = 1.0
-max_value = 20.0
+max_value = 50.0
 step = 0.2
 value = 10.0
 
@@ -97,14 +97,35 @@ text = "Max Acceleration"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-min_value = 1.0
-max_value = 20.0
+min_value = 0.1
+max_value = 30.0
 step = 0.1
 value = 12.5
 
 [node name="Label_max_acceleration_val" type="Label" parent="Control/ConfigBox/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 text = "12.5"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Control/ConfigBox/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label_gizmos" type="Label" parent="Control/ConfigBox/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "Gizmos Enabled: "
+
+[node name="CheckBox" type="CheckBox" parent="Control/ConfigBox/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+button_pressed = true
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Control/ConfigBox/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label_UI_hidden" type="Label" parent="Control/ConfigBox/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+text = "UI Hidden"
+
+[node name="CheckBox2" type="CheckBox" parent="Control/ConfigBox/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
 
 [node name="Keybinds" type="MarginContainer" parent="Control"]
 layout_mode = 1

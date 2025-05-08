@@ -47,7 +47,8 @@ func apply_movement(steering_force: Vector3, delta: float) -> void:
 	
 	ant.set_velocity(ant.velocity)
 	ant.move_and_slide()
-	draw_gizmos(steering_force, acceleration)
+	if ant.gizmos_enabled:
+		draw_gizmos(steering_force, acceleration)
 
 
 func draw_gizmos(steering_force: Vector3, acceleration: Vector3) -> void:

@@ -9,6 +9,7 @@ var target
 
 var current_state: State
 var food_pickedup:int = 0
+var gizmos_enabled:bool = true
 
 func _ready() -> void:
 	# Wander State by Default
