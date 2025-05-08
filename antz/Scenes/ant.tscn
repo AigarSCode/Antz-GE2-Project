@@ -1,10 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://g5v8gqwibn0a"]
+[gd_scene load_steps=15 format=3 uid="uid://g5v8gqwibn0a"]
 
 [ext_resource type="Script" uid="uid://c0nnpvaawi6kc" path="res://Scripts/ant.gd" id="1_3vc7g"]
 [ext_resource type="Script" uid="uid://71kc7ncoxqqk" path="res://Scripts/wander.gd" id="2_4ydk5"]
 [ext_resource type="Material" uid="uid://e4huwp7nrfx" path="res://assets/ant_material.tres" id="2_wtaqj"]
 [ext_resource type="Script" uid="uid://tsd40qpu5ko6" path="res://Scenes/foodFeelers.gd" id="3_ae3vd"]
-[ext_resource type="Script" uid="uid://yx62g58uc8q1" path="res://Scripts/return_to_hill.gd" id="3_fd48h"]
 [ext_resource type="Script" uid="uid://bvswb4x2g4rgg" path="res://Scenes/get_food.gd" id="5_yntpf"]
 [ext_resource type="Script" uid="uid://bpjhsydkv32a" path="res://Scripts/avoidance.gd" id="7_p3gn3"]
 
@@ -180,9 +179,6 @@ collision_mask = 2
 
 [node name="Wander" type="Node3D" parent="States"]
 script = ExtResource("2_4ydk5")
-
-[node name="ReturnToHill" type="Node3D" parent="States"]
-script = ExtResource("3_fd48h")
 
 [node name="GetFood" type="Node3D" parent="States"]
 script = ExtResource("5_yntpf")
