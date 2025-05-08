@@ -7,9 +7,11 @@ script = ExtResource("1_mkghg")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 1152.0
-offset_bottom = 648.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="InfoBox" type="MarginContainer" parent="Control"]
 layout_mode = 1
@@ -138,6 +140,7 @@ grow_vertical = 0
 
 [node name="Label" type="Label" parent="Control/Keybinds"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = " Esc to open/close settings"
 
 [node name="FoodFound" type="MarginContainer" parent="Control"]
@@ -155,9 +158,11 @@ layout_mode = 2
 
 [node name="Label_FoodFound" type="Label" parent="Control/FoodFound/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "Food Found"
 
 [node name="Label_FoodFound_Val" type="Label" parent="Control/FoodFound/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "0"
 horizontal_alignment = 1
