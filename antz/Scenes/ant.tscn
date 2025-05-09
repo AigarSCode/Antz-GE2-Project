@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://c0nnpvaawi6kc" path="res://Scripts/ant.gd" id="1_3vc7g"]
 [ext_resource type="Script" uid="uid://71kc7ncoxqqk" path="res://Scripts/wander.gd" id="2_4ydk5"]
 [ext_resource type="Material" uid="uid://e4huwp7nrfx" path="res://assets/ant_material.tres" id="2_wtaqj"]
-[ext_resource type="Script" uid="uid://tsd40qpu5ko6" path="res://Scenes/foodFeelers.gd" id="3_ae3vd"]
-[ext_resource type="Script" uid="uid://bvswb4x2g4rgg" path="res://Scenes/get_food.gd" id="5_yntpf"]
+[ext_resource type="Script" uid="uid://tsd40qpu5ko6" path="res://Scripts/foodFeelers.gd" id="3_ae3vd"]
+[ext_resource type="Script" uid="uid://bvswb4x2g4rgg" path="res://Scripts/get_food.gd" id="5_yntpf"]
 [ext_resource type="Script" uid="uid://bpjhsydkv32a" path="res://Scripts/avoidance.gd" id="7_p3gn3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yhm7m"]
